@@ -1,4 +1,4 @@
-# academic
+# pixel
 
 ## Build Setup
 

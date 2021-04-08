@@ -1,55 +1,109 @@
 <template>
   <div>
     <Nuxt />
+    <Footer />
+    <div
+      :class="[
+        'g-cursor',
+        { 'g-cursor_hover': hover },
+        { 'g-cursor_hide': hideCursor },
+      ]"
+    >
+      <div :style="cursorCircle" class="g-cursor__circle"></div>
+      <div ref="point" class="g-cursor__point" :style="cursorPoint"></div>
+    </div>
   </div>
 </template>
-
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script>
+export default {
+  data() {
+    return {
+      xChild: 0,
+      yChild: 0,
+      xParent: 0,
+      yParent: 0,
+      hover: false,
+      hideCursor: true,
+    }
+  },
+  computed: {
+    cursorCircle() {
+      return `transform: translateX(${this.xParent}px) translateY(${this.yParent}px) translateZ(0) translate3d(0, 0, 0);`
+    },
+    cursorPoint() {
+      return `transform: translateX(${this.xChild - 3}px) translateY(${
+        this.yChild - 3
+      }px) translateZ(0) translate3d(0, 0, 0);`
+    },
+  },
+  mounted() {
+    document.addEventListener('mousemove', this.moveCursor)
+    document.addEventListener('mouseleave', (e) => {
+      this.hideCursor = true
+    })
+    document.addEventListener('mouseenter', (e) => {
+      this.hideCursor = false
+    })
+  },
+  methods: {
+    moveCursor(e) {
+      this.xChild = e.clientX
+      this.yChild = e.clientY
+      setTimeout(() => {
+        this.xParent = e.clientX - 15
+        this.yParent = e.clientY - 15
+      }, 100)
+    },
+  },
+}
+</script>
+<style scoped>
+.g-cursor_hide {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+  display: none;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.g-cursor__circle {
+  pointer-events: none;
+  user-select: none;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #50e3c2;
+  border-radius: 100%;
+  z-index: 5555;
+  backface-visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+.g-cursor__point {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 100%;
+  background: #2336b6;
+  z-index: 55555555;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.g-cursor_hover .g-cursor__circle {
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+@media (min-width: 1200px) {
+  .g-cursor_hide {
+    display: block;
+  }
 }
 </style>

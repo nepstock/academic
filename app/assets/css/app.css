@@ -1,0 +1,255 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('~assets/fonts/Lato-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('~assets/fonts/Lato-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+label {
+  font-weight: 700 !important;
+  line-height: 18px;
+}
+label .badge {
+  font-size: 0.75rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 700;
+}
+
+a {
+  color: #2336b6;
+}
+
+.h100 {
+  min-height: 100vh;
+}
+.h80 {
+  min-height: 80vh;
+}
+.h60 {
+  min-height: 60vh;
+}
+.h40 {
+  min-height: 40vh;
+}
+
+.icon-sm {
+  font-size: 2rem;
+}
+.icon-md {
+  font-size: 3rem;
+}
+.icon-lg {
+  font-size: 5rem;
+}
+
+.bg-intro {
+  background: rgb(193, 56, 110);
+  background: linear-gradient(
+    0deg,
+    rgba(193, 56, 110, 1) 0%,
+    rgba(168, 211, 228, 1) 0%,
+    rgba(205, 235, 244, 1) 0%,
+    rgba(222, 238, 251, 1) 16%,
+    rgba(255, 255, 255, 1) 58%
+  );
+}
+.bg-intro2 {
+  background: url('../img/bg-intro.jpg') no-repeat center;
+  background-size: cover;
+  background-position-x: 30%;
+}
+.bg-kuepa {
+  background: url('../img/bg-kuepa.png') no-repeat center;
+  background-size: cover;
+  background-position-x: 30%;
+}
+.bg-kuepa-prepa {
+  background: url('../img/bg-kuepa.jpg') no-repeat center;
+  background-size: cover;
+  background-position-x: 30%;
+}
+.bg-gray {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.bg-blue {
+  background-color: #040e4a;
+}
+.bg-black {
+  background-color: #020a3d;
+}
+.bg-purple {
+  background-color: #710acc;
+}
+.bg-smoke {
+  background-color: #323232;
+}
+
+.button-primary {
+  background-color: #bc00b0;
+  border-color: #bc00b0;
+  transition: all ease 2s;
+  color: #fff;
+  font-weight: 700;
+}
+.button-primary:hover {
+  background-color: #862481;
+  border-color: #862481;
+}
+
+.button-secondary {
+  background-color: #7e11dc;
+  border-color: #7e11dc;
+  transition: all ease 2s;
+  color: #fff;
+  font-weight: 700;
+}
+.button-secondary:hover {
+  background-color: #710acc;
+  border-color: #710acc;
+}
+
+.button-kuepa {
+  background-color: #ff671b;
+  border-color: #ff671b;
+  transition: all ease 2s;
+  color: #fff;
+  font-weight: 700;
+}
+.button-kuepa:hover {
+  background-color: #bd490f;
+  border-color: #bd490f;
+}
+
+.text-primary {
+  color: #bc00b0 !important;
+}
+.text-kuepa {
+  color: #ff671b !important;
+}
+
+.text-kuepa-secondary {
+  color: #5f7392 !important;
+}
+.text-shadow {
+  text-shadow: 1px 2px 1px #000;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #2336b6 !important;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.fade-in-enter-active {
+  transition: all 0.3s ease;
+}
+.fade-in-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-in-enter, .fade-in-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(35px);
+  opacity: 0;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
+.form-group {
+  position: relative;
+}
+.form-group svg {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: #b6bfff;
+}
+.form-group .form-control {
+  padding-left: 35px;
+  border-color: #b6bfff;
+  border-width: 2px;
+}
