@@ -13,7 +13,7 @@
         <b-row class="justify-content-center">
           <transition name="fade-in" appear>
             <b-col v-if="showIntro && !$fetchState.pending" sm="6">
-              <b-button size="sm" to="/inscripcion" variant="link"
+              <b-button size="sm" to="/inscripcion?type=online" variant="link"
                 ><b-icon icon="arrow-left" class="mr-2"></b-icon>atrás</b-button
               >
               <Card
@@ -119,7 +119,7 @@ export default {
           this.$store.commit('setLocation', 'online')
           this.$router.push({
             path:
-              '/personal?type=' +
+              '/colegiatura?type=' +
               this.getType +
               '&level=' +
               this.getSchool +

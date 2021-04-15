@@ -4,6 +4,7 @@ export const state = () => ({
     type: '',
     school: '',
     career: '',
+    price: '',
     nameCareers: [],
     results: [],
     location: '',
@@ -22,6 +23,9 @@ export const mutations = {
   },
   setCareer(state, career) {
     state.form.career = career
+  },
+  setPrice(state, price) {
+    state.form.price = price
   },
   setNameCareers(state, nameCareers) {
     state.form.nameCareers = nameCareers
