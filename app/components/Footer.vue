@@ -11,6 +11,11 @@
                 >Términos y condiciones</b-nav-item
               >
               <b-nav-item
+                href="https://pruebas.ignis.digital/academic/"
+                target="_blank"
+                >Blog</b-nav-item
+              >
+              <b-nav-item
                 href="https://www.facebook.com/academicmexico"
                 target="_blank"
                 >Síguenos en Facebook</b-nav-item
