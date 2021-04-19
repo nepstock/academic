@@ -26,7 +26,7 @@
                     <div
                       v-for="(item, index) in options"
                       :key="item.text"
-                      :class="item.value !== 'init' ? 'w-50 px-2' : ''"
+                      :class="item.value !== 'init' ? 'w-50 px-1' : ''"
                       class="d-inline-block"
                     >
                       <div
