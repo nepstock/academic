@@ -3,11 +3,7 @@
     <b-overlay :show="show" rounded="sm">
       <div class="card-result shadow mb-3">
         <div class="card-image">
-          <img
-            src="../assets/img/logo.png"
-            class="px-4 py-5"
-            :alt="item.name"
-          />
+          <img :src="item.logo" class="px-4 py-5" :alt="item.name" />
         </div>
         <div class="card-info">
           <ul class="mb-3 small pl-3">
@@ -32,7 +28,12 @@
             </li>
           </ul>
           <!-- :href="item.educative_offer.url" -->
-          <b-button class="button-secondary" pill block :href="item.url"
+          <b-button
+            class="button-secondary"
+            size="sm"
+            pill
+            block
+            :href="item.url"
             >Aplicar para esta oferta</b-button
           >
         </div>
